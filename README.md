@@ -18,7 +18,7 @@ abrir uma pasta com o git bash laravel n nome do projeto NONE PHPUNIT no reposit
 
 Autoload running
 
-SQLITE yes cd nome do projeto code . para abrir a pasta para codar no terminal = php artisan install:api php artisan make : controller PostController
+SQLITE yes cd nome do projeto code . para abrir a pasta para codar no terminal = php artisan install:api php artisan make : controller (Nome)Controller
 
 php artisan make:model (NOME DO TIPO AQUI FILMES POST ETC -m
 
