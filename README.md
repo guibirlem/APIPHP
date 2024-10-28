@@ -29,9 +29,34 @@ DEPOIS DISSO DAR O COMANDO php artisan migrate é muito importante porque dai a 
 ir app > models > post(ou outro nome).php protected $fillable = [ 'diretor', 'titulo', 'ano' ];
 
 AGORA FAZER AS RESPONSES:
+Criar pasta  Responses
+ApiResponse.php
+dentro dela
+ <?php 
+class ApiResponse
+{
+    public static function  success(?string $message = null , mixed $data = null)
+    {
+        return response() ->json( [
+            "message" => $message,
+            "data" => $data,
+            "status" => "sucess"
+        ], 200);
+    }
 
-
-
+    public static  function ok(string $message, mixed $data = null)
+    {
+        return self::success($message , $data);
+    }
+    public static function error(mixed $errors,string $message){
+        return response() ->json( [
+            "errors " => $errors ,
+            "message" => $message,
+            "data" => [],
+            "status" => "fail"
+        ], 400);
+    }
+}
 
 depois
 
