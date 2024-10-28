@@ -28,6 +28,11 @@ DEPOIS DISSO DAR O COMANDO php artisan migrate é muito importante porque dai a 
 
 ir app > models > post(ou outro nome).php protected $fillable = [ 'diretor', 'titulo', 'ano' ];
 
+AGORA FAZER AS RESPONSES:
+
+
+
+
 depois
 
 app http controllers postcontroller.php public function salvar (Request $request) { $validator = Validator::make($request->all(), [ 'titulo' => 'required|string|max:200', 'diretor' => 'required|string|max:150', 'ano' => 'required|numeric', ]);
@@ -82,6 +87,8 @@ public function excluir(int $id)
 agora routes api.php
 
 botar ROTAS serao usadas no imsonia Route::get('/filme', [FilmeController::class,'listar']); Route::post('/filme', [FilmeController::class,'salvar']); Route::put('/filme/{id}', [FilmeController::class,'editar']); Route::delete('/filme/{id}', [FilmeController::class,'excluir']); Route::get('/filme/{id}', [FilmeController::class,'listarPeloId']);
+
+
 
 no imsonia fazer um arquivo nome e mudar os endpoints (lembrando que o post e meio padrão, nesse caso foi Filmes) DEL-deletarPost POST-editarPost Put-SalvarPost GET-getPost
 
